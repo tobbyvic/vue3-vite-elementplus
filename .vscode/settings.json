@@ -26,5 +26,12 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#da4c4c2d",
+    "editor.lineHighlightBorder": "#9fced11f",
+    "activityBar.background": "#32274E",
+    "titleBar.activeBackground": "#46376D",
+    "titleBar.activeForeground": "#FCFCFD"
   }
 }

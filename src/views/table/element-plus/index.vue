@@ -3,7 +3,7 @@ import { reactive, ref, watch } from "vue"
 import { createTableDataApi, deleteTableDataApi, updateTableDataApi, getTableDataApi } from "@/api/table"
 import { type IGetTableData } from "@/api/table/types/table"
 import { type FormInstance, type FormRules, ElMessage, ElMessageBox } from "element-plus"
-import { Search, Refresh, CirclePlus, Delete, Download, RefreshRight } from "@element-plus/icons-vue"
+import { Search, Refresh, CirclePlus } from "@element-plus/icons-vue"
 import { usePagination } from "@/hooks/usePagination"
 
 defineOptions({
@@ -121,9 +121,6 @@ const resetSearch = () => {
   }
   paginationData.currentPage = 1
 }
-const handleRefresh = () => {
-  getTableData()
-}
 //#endregion
 
 /** 监听分页参数的变化 */
@@ -150,20 +147,20 @@ watch([() => paginationData.currentPage, () => paginationData.pageSize], getTabl
       <div class="toolbar-wrapper">
         <div>
           <el-button type="primary" :icon="CirclePlus" @click="dialogVisible = true">新增用户</el-button>
-          <el-button type="danger" :icon="Delete">批量删除</el-button>
+          <!-- <el-button type="danger" :icon="Delete">批量删除</el-button> -->
         </div>
-        <div>
+        <!-- <div>
           <el-tooltip content="下载">
             <el-button type="primary" :icon="Download" circle />
           </el-tooltip>
           <el-tooltip content="刷新表格">
             <el-button type="primary" :icon="RefreshRight" circle @click="handleRefresh" />
           </el-tooltip>
-        </div>
+        </div> -->
       </div>
       <div class="table-wrapper">
         <el-table :data="tableData">
-          <el-table-column type="selection" width="50" align="center" />
+          <!-- <el-table-column type="selection" width="50" align="center" /> -->
           <el-table-column prop="username" label="用户名" align="center" />
           <el-table-column prop="roles" label="角色" align="center">
             <template #default="scope">
