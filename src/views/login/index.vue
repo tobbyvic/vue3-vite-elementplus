@@ -15,7 +15,7 @@ const loading = ref(false)
 /** 登录表单数据 */
 const loginForm: ILoginRequestData = reactive({
   username: "admin",
-  password: "12345678"
+  password: "gsadmin"
 })
 /** 登录表单校验规则 */
 const loginFormRules: FormRules = {
@@ -34,7 +34,7 @@ const handleLogin = () => {
       if (loginForm.username === "admin" && loginForm.password === "gsadmin") {
         setToken("token-admin")
         ElMessage.success("登录成功")
-        router.push({ path: "/" })
+        router.push({ path: "/table" })
       } else {
         ElMessage.error("用户名或密码不正确")
       }
@@ -51,7 +51,7 @@ const handleLogin = () => {
     <ThemeSwitch class="theme-switch" />
     <div class="login-card">
       <div class="title">
-        <img src="@/assets/layout/logo-text-2.png" />
+        <img src="@/assets/layout/logo-new.png" />
       </div>
       <div class="content">
         <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" @keyup.enter="handleLogin">
@@ -106,7 +106,7 @@ const handleLogin = () => {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 150px;
+      height: 120px;
       img {
         height: 100%;
       }
